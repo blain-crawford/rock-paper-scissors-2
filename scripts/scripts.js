@@ -37,19 +37,22 @@ const playRound = function () {
   }
 };
 
-let game = function(){
+let game = function () {
   let playerScore = 0;
   let computerScore = 0;
   gameCount = 0;
 
-  while(gameCount < 5 && playerScore < 3 && computerScore < 3){
+  while (gameCount < 5 && playerScore < 3 && computerScore < 3) {
     let winner = playRound();
-    if(winner === 'Tie game human!' || winner === 'Play the game you coward!'){
+    if (
+      winner === 'Tie game human!' ||
+      winner === 'Play the game you coward!'
+    ) {
       gameCount++;
-    } else if(winner === 'You have been defeated human!'){
+    } else if (winner === 'You have been defeated human!') {
       gameCount++;
       computerScore++;
-    } else if(winner === 'You win this time human!'){
+    } else if (winner === 'You win this time human!') {
       gameCount++;
       playerScore++;
     }
@@ -59,13 +62,25 @@ let game = function(){
     console.log(gameCount);
   }
 
-  if(playerScore > computerScore){
-    return ['The game is yours human!', `Your score was ${playerScore}`, `My score was ${computerScore}`]
-  } else if(playerScore < computerScore){
-    return ['The game is mine human!', `Your score was ${playerScore}`, `My score was ${computerScore}`]
-  } else if (playerScore === computerScore){
-    return ['We shall settle this next time human!', `Your score was ${playerScore}`, `My score was ${computerScore}`]
+  if (playerScore > computerScore) {
+    return [
+      'The game is yours human!',
+      `Your score was ${playerScore}`,
+      `My score was ${computerScore}`,
+    ];
+  } else if (playerScore < computerScore) {
+    return [
+      'The game is mine human!',
+      `Your score was ${playerScore}`,
+      `My score was ${computerScore}`,
+    ];
+  } else if (playerScore === computerScore) {
+    return [
+      'We shall settle this next time human!',
+      `Your score was ${playerScore}`,
+      `My score was ${computerScore}`,
+    ];
   }
-}
+};
 
 console.log(game());
