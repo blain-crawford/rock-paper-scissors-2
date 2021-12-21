@@ -1,3 +1,8 @@
+//creating html tags
+let containerDiv = document.getElementById('container');
+
+
+//creating logic for computer choices
 const computerPlay = function () {
   let shoot = Math.floor(Math.random() * 3);
 
@@ -10,10 +15,11 @@ const computerPlay = function () {
   }
 };
 
+//creating logic for each round of RPS
 const playRound = function () {
   let playerShoot = prompt('choose your weapon human').toLowerCase();
   let computerSelection = computerPlay();
-
+  let counter = 1;
   if (
     (playerShoot === 'rock' && computerSelection === 'rock') ||
     (playerShoot === 'paper' && computerSelection === 'paper') ||
@@ -37,6 +43,7 @@ const playRound = function () {
   }
 };
 
+//creating logic for best of 5 or first to 3 game
 let game = function () {
   let playerScore = 0;
   let computerScore = 0;
@@ -63,18 +70,33 @@ let game = function () {
   }
 
   if (playerScore > computerScore) {
+    containerDiv.innerHTML = '';
+    let lastWinner = document.createElement('p');
+    lastWinner.textContent = 'The game is your\'s human';
+    containerDiv.appendChild(lastWinner);
+
     return [
       'The game is yours human!',
       `Your score was ${playerScore}`,
       `My score was ${computerScore}`,
     ];
   } else if (playerScore < computerScore) {
+    containerDiv.innerHTML = '';
+    let lastWinner = document.createElement('p');
+    lastWinner.textContent = 'The game is mine human!';
+    containerDiv.appendChild(lastWinner);
+
     return [
       'The game is mine human!',
       `Your score was ${playerScore}`,
       `My score was ${computerScore}`,
     ];
   } else if (playerScore === computerScore) {
+    containerDiv.innerHTML = '';
+    let lastWinner = document.createElement('p');
+    lastWinner.textContent = 'We shall settle this next time human!';
+    containerDiv.appendChild(lastWinner);
+    
     return [
       'We shall settle this next time human!',
       `Your score was ${playerScore}`,
