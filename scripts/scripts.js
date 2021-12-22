@@ -105,4 +105,3 @@ let game = function () {
 };
 
 console.log(game());
-
