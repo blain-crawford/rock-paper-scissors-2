@@ -1,5 +1,10 @@
-//creating html tags
+//creating and linking html tags
 let containerDiv = document.getElementById('container');
+let buttons = document.querySelectorAll('.button');
+let player = document.getElementById('player')
+let zombie = document.getElementById('zombie')
+
+
 
 
 //creating logic for computer choices
@@ -17,38 +22,53 @@ const computerPlay = function () {
 
 //creating logic for each round of RPS
 const playRound = function () {
-  let playerShoot = prompt('choose your weapon human').toLowerCase();
+  let playerShoot = this.title;
   let computerSelection = computerPlay();
+  let playerScore = 0;
+  let computerScore = 0;
   if (
     (playerShoot === 'rock' && computerSelection === 'rock') ||
     (playerShoot === 'paper' && computerSelection === 'paper') ||
     (playerShoot === 'scissors' && computerSelection === 'scissors')
   ) {
+    console.log('Tie game human!');
     return 'Tie game human!';
   } else if (
     (playerShoot === 'rock' && computerSelection === 'scissors') ||
     (playerShoot === 'paper' && computerSelection === 'rock') ||
     (playerShoot === 'scissors' && computerSelection === 'paper')
   ) {
-    return 'You win this time human!';
+    console.log('You win this time human!')
+    return 'You win this time human!'
   } else if (
     (playerShoot === 'rock' && computerSelection === 'paper') ||
     (playerShoot === 'paper' && computerSelection === 'scissors') ||
     (playerShoot === 'scissors' && computerSelection === 'rock')
   ) {
-    return 'You have been defeated human!';
+    console.log('You have been defeated human!')
+    return 'You have been defeated human!'
   } else {
+    
     return 'Play the game you coward!';
   }
+  console.log(playerShoot);
+  console.log(computerSelection);
+  console.log(playerScore);
+  console.log(computerScore);
 };
 
 //creating logic for best of 5 or first to 3 game
 let game = function () {
+  buttons.forEach((button) => {
+    button.addEventListener('click', playRound);
+    
+  });
+  
   let playerScore = 0;
   let computerScore = 0;
   gameCount = 0;
 
-  while (gameCount < 5 && playerScore < 3 && computerScore < 3) {
+  while (playerScore < 5 && computerScore < 5) {
     let winner = playRound();
     if (
       winner === 'Tie game human!' ||
@@ -56,8 +76,8 @@ let game = function () {
     ) {
       gameCount++;
     } else if (winner === 'You have been defeated human!') {
-      gameCount++;
       computerScore++;
+
     } else if (winner === 'You win this time human!') {
       gameCount++;
       playerScore++;
@@ -104,4 +124,8 @@ let game = function () {
   }
 };
 
-console.log(game());
+
+
+//adding event listeners to divs
+
+
