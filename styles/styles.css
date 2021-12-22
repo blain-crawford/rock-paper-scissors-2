@@ -1,3 +1,141 @@
+@import url(./reset.css);
+@font-face {
+    font-family: Zombie;
+    src: url(../fonts/thedeadarecoming/TheDeadAreComing.ttf);
+}
+
+@font-face {
+    font-family: Zombie-Numbers;
+    src: url(../fonts/zombified/Zombified.ttf);
+    
+}
+
 h1{
-    color: blue;
+    font-size: 600px;
+    margin-top: 50px;
+    font-family: Zombie; 
+    display: block;
+    font-size: 3vw;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+p{
+    font-family: Zombie;
+    color: rgba(184, 29, 29, 0.5);
+}
+
+span{
+    font-family: Zombie-Numbers;
+}
+
+html,
+body{
+    background-color: black;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+#container{
+    width: 100vw;
+    margin: 0;
+    display: block;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+.blood{
+    background-image: url(../images/blood-top.png);
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+}
+
+.blood-hands{
+    display: flex;
+}
+
+.right-hand{
+    margin-right: auto;
+    display: block;
+}
+
+.left-hand{
+    margin-left: auto;
+    display: block;
+}
+
+.blood img{
+    height: 150px;
+    width: 75px;
+    margin: auto;
+    object-fit: fill;
+    
+}
+
+ .main-content{
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+
+} 
+
+#rps-container {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+}
+
+.button{
+    width: 200px;
+    min-width: 0;
+    height: 220px;
+    border: 5px solid rgba(85, 6, 6, 0.568);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5%;
+}
+
+.button img{
+    width: 200px;
+    min-width: 0;
+    height: 200px;
+    object-fit:contain;
+    display: block;
+
+}
+
+.score-counter{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 50px;
+}
+
+.score-container{
+    padding: 3%;
+}
+
+.score-label{
+    font-family: Zombie;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.score{
+    font-family: Zombie-Numbers;
+    font-size: 75px;
+    display: block;
 }
