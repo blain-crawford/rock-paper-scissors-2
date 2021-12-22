@@ -1,8 +1,10 @@
 //creating and linking html tags
 let containerDiv = document.getElementById('container');
+let body = document.querySelector('body');
 let buttons = document.querySelectorAll('.button');
-let player = document.getElementById('player')
-let zombie = document.getElementById('zombie')
+let player = document.getElementById('player');
+let zombie = document.getElementById('zombie');
+
 
 
 
@@ -24,108 +26,55 @@ const computerPlay = function () {
 const playRound = function () {
   let playerShoot = this.title;
   let computerSelection = computerPlay();
-  let playerScore = 0;
-  let computerScore = 0;
+  
   if (
-    (playerShoot === 'rock' && computerSelection === 'rock') ||
-    (playerShoot === 'paper' && computerSelection === 'paper') ||
-    (playerShoot === 'scissors' && computerSelection === 'scissors')
-  ) {
-    console.log('Tie game human!');
-    return 'Tie game human!';
-  } else if (
     (playerShoot === 'rock' && computerSelection === 'scissors') ||
     (playerShoot === 'paper' && computerSelection === 'rock') ||
     (playerShoot === 'scissors' && computerSelection === 'paper')
   ) {
-    console.log('You win this time human!')
-    return 'You win this time human!'
+      player.textContent = parseInt(player.textContent) + 1;
   } else if (
     (playerShoot === 'rock' && computerSelection === 'paper') ||
     (playerShoot === 'paper' && computerSelection === 'scissors') ||
     (playerShoot === 'scissors' && computerSelection === 'rock')
   ) {
-    console.log('You have been defeated human!')
-    return 'You have been defeated human!'
-  } else {
-    
-    return 'Play the game you coward!';
+      zombie.textContent = parseInt(zombie.textContent) + 1;
   }
-  console.log(playerShoot);
-  console.log(computerSelection);
-  console.log(playerScore);
-  console.log(computerScore);
-};
-
-//creating logic for best of 5 or first to 3 game
-let game = function () {
-  buttons.forEach((button) => {
-    button.addEventListener('click', playRound);
-    
-  });
   
-  let playerScore = 0;
-  let computerScore = 0;
-  gameCount = 0;
-
-  while (playerScore < 5 && computerScore < 5) {
-    let winner = playRound();
-    if (
-      winner === 'Tie game human!' ||
-      winner === 'Play the game you coward!'
-    ) {
-      gameCount++;
-    } else if (winner === 'You have been defeated human!') {
-      computerScore++;
-
-    } else if (winner === 'You win this time human!') {
-      gameCount++;
-      playerScore++;
-    }
-    console.log(winner);
-    console.log(playerScore);
-    console.log(computerScore);
-    console.log(gameCount);
+  const handleGameEnd = function(){
+    containerDiv.innerHTML = '<h1>YOU LOSE!!!!</h1>';
+    body.classList.toggle('lose');
+    let playAgain = document.querySelector('button');
+    playAgain.addEventListener('click',()=>{
+      window.location.reload();
+    });
   }
 
-  if (playerScore > computerScore) {
-    containerDiv.innerHTML = '';
-    let lastWinner = document.createElement('p');
-    lastWinner.textContent = 'The game is yours human';
-    containerDiv.appendChild(lastWinner);
+  const handleGameLoss = function(){
+    containerDiv.innerHTML = '<h1>LET THEM BUUUUUUUUURNNNNNNNNN!</h1>';
+    body.classList.toggle('win');
+    let playAgain = document.querySelector('button');
+    playAgain.addEventListener('click',()=>{
+      window.location.reload();
+    });
+  }
 
-    return [
-      'The game is yours human!',
-      `Your score was ${playerScore}`,
-      `My score was ${computerScore}`,
-    ];
-  } else if (playerScore < computerScore) {
-    containerDiv.innerHTML = '';
-    let lastWinner = document.createElement('p');
-    lastWinner.textContent = 'The game is mine human!';
-    containerDiv.appendChild(lastWinner);
+  if(zombie.textContent === '5'){
+    buttons.forEach(button => button.removeEventListener('click', playRound));
+    setTimeout(handleGameEnd, 2000);
+  }
 
-    return [
-      'The game is mine human!',
-      `Your score was ${playerScore}`,
-      `My score was ${computerScore}`,
-    ];
-  } else if (playerScore === computerScore) {
-    containerDiv.innerHTML = '';
-    let lastWinner = document.createElement('p');
-    lastWinner.textContent = 'We shall settle this next time human!';
-    containerDiv.appendChild(lastWinner);
-    
-    return [
-      'We shall settle this next time human!',
-      `Your score was ${playerScore}`,
-      `My score was ${computerScore}`,
-    ];
+  if(player.textContent === '5'){
+    buttons.forEach(button => button.removeEventListener('click', playRound));
+    setTimeout(handleGameLoss, 2000);
   }
 };
-
-
 
 //adding event listeners to divs
+
+buttons.forEach((button) => {
+  button.addEventListener('click', playRound);
+  
+});
 
 

@@ -139,3 +139,31 @@ body{
     font-size: 75px;
     display: block;
 }
+
+.lose{
+    background-image: url(../images/blood-splatter-overlay.gif);
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lose h1{
+    color: black;
+}
+
+.win{
+    background-image: url(../images/flamethrower-go-away.gif);
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.win h1{
+    color: black;
+}
