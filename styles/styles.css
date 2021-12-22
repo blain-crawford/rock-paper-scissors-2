@@ -11,57 +11,76 @@
 }
 
 h1{
-    font-size: 30px;
+    font-size: 600px;
     margin-top: 50px;
-    font-family: Zombie;
+    font-family: Zombie; 
+    display: block;
+    font-size: 3vw;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
 }
 
 html,
 body{
     background-color: black;
-    height: 100%;
-    width: 100%;
+    /* height: 100%;
+    width: 100%; */
     box-sizing: border-box;
     text-align: center;
     display: block;
+    margin: 0;
+    padding: 0;
 }
 
 #container{
-    width: 100%;
-    height: 100%;
-    display: flex;
+    margin: 0;
+    display: block;
     flex-direction: column;
     align-items: center;
     color: white;
 }
 
 .blood{
-    width: 100%;
-    height: 200px;
     background-image: url(../images/blood-top.png);
     background-size: cover;
     background-position: center;
+}
+
+.blood-hands{
     display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+}
+
+.right-hand{
+    margin-right: auto;
+    display: block;
+}
+
+.left-hand{
+    margin-left: auto;
+    display: block;
 }
 
 .blood img{
-    height: 100px;
-    width: 50px;
+    height: 150px;
+    width: 75px;
+    margin: auto;
     object-fit: fill;
+    
 }
 
-.main-content{
-    display: flex;
-}
+ .main-content{
+    display: block;
+} 
 
 #rps-container {
     margin-top: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* flex-wrap: wrap; */
+    flex-wrap: wrap;
     gap: 50px;
 }
 
@@ -71,9 +90,7 @@ body{
     height: 200px;
     border: 1px solid white;
     margin: 0 25px;
-    /* display: flex; */
-    justify-content: center;
-    align-items: center;
+    display: block;
 }
 
 .button img{
@@ -82,4 +99,3 @@ body{
     object-fit:contain;
 
 }
-
