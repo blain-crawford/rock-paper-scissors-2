@@ -1,3 +1,6 @@
+/*Imports*/
+
+
 @import url(./reset.css);
 @font-face {
     font-family: Zombie;
@@ -6,8 +9,23 @@
 
 @font-face {
     font-family: Zombie-Numbers;
-    src: url(../fonts/zombified/Zombified.ttf);
-    
+    src: url(../fonts/zombified/Zombified.ttf); 
+}
+
+
+/* css for full Project*/
+
+
+html,
+body{
+    background-color: black;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    display: block;
+    margin: 0;
+    padding: 0;
 }
 
 h1{
@@ -32,18 +50,6 @@ span{
     font-family: Zombie-Numbers;
 }
 
-html,
-body{
-    background-color: black;
-    height: 100%;
-    width: 100%;
-    box-sizing: border-box;
-    text-align: center;
-    display: block;
-    margin: 0;
-    padding: 0;
-}
-
 #container{
     width: 100vw;
     margin: 0;
@@ -64,6 +70,13 @@ body{
     display: flex;
 }
 
+.blood img{
+    height: 150px;
+    width: 75px;
+    margin: auto;
+    object-fit: fill;   
+}
+
 .right-hand{
     margin-right: auto;
     display: block;
@@ -74,20 +87,11 @@ body{
     display: block;
 }
 
-.blood img{
-    height: 150px;
-    width: 75px;
-    margin: auto;
-    object-fit: fill;
-    
-}
-
  .main-content{
     display: block;
     width: 100%;
     padding: 0;
     margin: 0;
-
 } 
 
 #rps-container {
@@ -107,6 +111,12 @@ body{
     justify-content: center;
     align-items: center;
     border-radius: 5%;
+    transition: all 0.5s ease-in-out;
+}
+
+.button:hover{
+    width: 210px;
+    box-shadow: 19px 9px 48px 10px rgba(85, 6, 6, 0.568);
 }
 
 .button img{
@@ -115,7 +125,6 @@ body{
     height: 200px;
     object-fit:contain;
     display: block;
-
 }
 
 .score-counter{
@@ -140,30 +149,134 @@ body{
     display: block;
 }
 
+
+/* css for losing page */
+
+
 .lose{
     background-image: url(../images/blood-splatter-overlay.gif);
     background-size: cover;
+    background-position: center;
     height: 100%;
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
 .lose h1{
+    position: relative;
+    margin-top: auto;
     color: black;
+    font-size: 100px;
+    right: 10px;
 }
+
+#lose-container{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#lose-container button{
+    background-color: rgba(236, 222, 222, 0.102);
+    color: rgb(207, 29, 29);
+    font-family: Zombie;
+    border: none;
+    padding: 30px 50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 30px;
+    margin: 4px 4px;
+    cursor: pointer;
+    border-radius: 8px;
+    animation: fadeIn 10s;
+    transition: all 0.5s ease-in-out;
+}
+
+#lose-container button:hover{
+    box-shadow: 19px 9px 100px 17px #C40000;
+    padding: 40px 60px;
+}
+
+
+/* css for winning page */
+
 
 .win{
     background-image: url(../images/flamethrower-go-away.gif);
     background-size: cover;
+    background-position: center;
     height: 100%;
     width: 100%;
     display: flex;
-    justify-content: flex-start;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
 
 .win h1{
+    margin-top: auto;
     color: black;
+    font-size: 100px;
+    animation: fadeIn 2s;
+} 
+
+#win-container{
+    height: 100%;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+#win-container button{
+    background-color: rgba(14, 12, 12, 0.144);
+    font-family: Zombie;
+    border: none;
+    padding: 30px 50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 30px;
+    margin: 4px 4px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all .5s ease-in-out;
+}
+
+#win-container button:hover{
+    padding: 40px 60px;
+    box-shadow: 19px 9px 27px 17px #A85828;
+}
+
+.play-again{
+    margin-top: auto;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+/* Animation parameters */
+@keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+  @-moz-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+  @-webkit-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+  @-o-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+  @-ms-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
 }
