@@ -1,265 +1,259 @@
 /*Imports*/
 
-
 @import url(./reset.css);
 @font-face {
-    font-family: Zombie;
-    src: url(../fonts/thedeadarecoming/TheDeadAreComing.ttf);
+  font-family: Zombie;
+  src: url(../fonts/thedeadarecoming/TheDeadAreComing.ttf);
 }
 
 @font-face {
-    font-family: Zombie-Numbers;
-    src: url(../fonts/zombified/Zombified.ttf); 
+  font-family: Zombie-Numbers;
+  src: url(../fonts/zombified/Zombified.ttf);
 }
-
 
 /* css for full Project*/
 
-
 html,
-body{
-    background-color: black;
-    height: 100%;
-    width: 100%;
-    box-sizing: border-box;
-    text-align: center;
-    display: block;
-    margin: 0;
-    padding: 0;
+body {
+  background-color: black;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  display: block;
+  margin: 0;
+  padding: 0;
 }
 
-h1{
-    font-size: 600px;
-    margin-top: 50px;
-    font-family: Zombie; 
-    display: block;
-    font-size: 3vw;
-    margin-block-start: 0.67em;
-    margin-block-end: 0.67em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    font-weight: bold;
+h1 {
+  font-size: 600px;
+  margin-top: 50px;
+  font-family: Zombie;
+  display: block;
+  font-size: 3vw;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
 }
 
-p{
-    font-family: Zombie;
-    color: rgba(184, 29, 29, 0.5);
+p {
+  font-family: Zombie;
+  color: rgba(184, 29, 29, 0.5);
 }
 
-span{
-    font-family: Zombie-Numbers;
+span {
+  font-family: Zombie-Numbers;
 }
 
-#container{
-    width: 100vw;
-    margin: 0;
-    display: block;
-    flex-direction: column;
-    align-items: center;
-    color: white;
+#container {
+  width: 100vw;
+  margin: 0;
+  display: block;
+  flex-direction: column;
+  align-items: center;
+  color: white;
 }
 
-.blood{
-    background-image: url(../images/blood-top.png);
-    background-size: cover;
-    background-position: center;
-    width: 100%;
+.blood {
+  background-image: url(../images/blood-top.png);
+  background-size: cover;
+  background-position: center;
+  width: 100%;
 }
 
-.blood-hands{
-    display: flex;
+.blood-hands {
+  display: flex;
 }
 
-.blood img{
-    height: 150px;
-    width: 75px;
-    margin: auto;
-    object-fit: fill;   
+.blood img {
+  height: 150px;
+  width: 75px;
+  margin: auto;
+  object-fit: fill;
 }
 
-.right-hand{
-    margin-right: auto;
-    display: block;
+.right-hand {
+  margin-right: auto;
+  display: block;
 }
 
-.left-hand{
-    margin-left: auto;
-    display: block;
+.left-hand {
+  margin-left: auto;
+  display: block;
 }
 
- .main-content{
-    display: block;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-} 
+.main-content {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
 
 #rps-container {
-    margin-top: 100px;
-    display: flex;
-    justify-content: center;
-    gap: 5%;
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  gap: 5%;
 }
 
-.button{
-    width: 200px;
-    min-width: 0;
-    height: 220px;
-    border: 5px solid rgba(85, 6, 6, 0.568);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5%;
-    transition: all 0.5s ease-in-out;
+.button {
+  width: 200px;
+  min-width: 0;
+  height: 220px;
+  border: 5px solid rgba(85, 6, 6, 0.568);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5%;
+  transition: all 0.5s ease-in-out;
 }
 
-.button:hover{
-    width: 210px;
-    box-shadow: 19px 9px 48px 10px rgba(85, 6, 6, 0.568);
+.button:hover {
+  width: 210px;
+  box-shadow: 19px 9px 48px 10px rgba(85, 6, 6, 0.568);
 }
 
-.button img{
-    width: 200px;
-    min-width: 0;
-    height: 200px;
-    object-fit:contain;
-    display: block;
+.button img {
+  width: 200px;
+  min-width: 0;
+  height: 200px;
+  object-fit: contain;
+  display: block;
 }
 
-.score-counter{
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 50px;
+.score-counter {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 50px;
 }
 
-.score-container{
-    padding: 3%;
+.score-container {
+  padding: 3%;
 }
 
-.score-label{
-    font-family: Zombie;
-    font-size: 30px;
-    margin-bottom: 30px;
+.score-label {
+  font-family: Zombie;
+  font-size: 30px;
+  margin-bottom: 30px;
 }
 
-.score{
-    font-family: Zombie-Numbers;
-    font-size: 75px;
-    display: block;
+.score {
+  font-family: Zombie-Numbers;
+  font-size: 75px;
+  display: block;
 }
-
 
 /* css for losing page */
 
-
-.lose{
-    background-image: url(../images/blood-splatter-overlay.gif);
-    background-size: cover;
-    background-position: center;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.lose {
+  background-image: url(../images/blood-splatter-overlay.gif);
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.lose h1{
-    position: relative;
-    margin-top: auto;
-    color: black;
-    font-size: 100px;
-    right: 10px;
+.lose h1 {
+  position: relative;
+  margin-top: auto;
+  color: black;
+  font-size: 100px;
+  right: 10px;
 }
 
-#lose-container{
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+#lose-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-#lose-container button{
-    background-color: rgba(236, 222, 222, 0.102);
-    color: rgb(207, 29, 29);
-    font-family: Zombie;
-    border: none;
-    padding: 30px 50px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 30px;
-    margin: 4px 4px;
-    cursor: pointer;
-    border-radius: 8px;
-    animation: fadeIn 10s;
-    transition: all 0.5s ease-in-out;
+#lose-container button {
+  background-color: rgba(236, 222, 222, 0.102);
+  color: rgb(207, 29, 29);
+  font-family: Zombie;
+  border: none;
+  padding: 30px 50px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 30px;
+  margin: 4px 4px;
+  cursor: pointer;
+  border-radius: 8px;
+  animation: fadeIn 10s;
+  transition: all 0.5s ease-in-out;
 }
 
-#lose-container button:hover{
-    box-shadow: 19px 9px 100px 17px #C40000;
-    padding: 40px 60px;
+#lose-container button:hover {
+  box-shadow: 19px 9px 100px 17px #c40000;
+  padding: 40px 60px;
 }
-
 
 /* css for winning page */
 
-
-.win{
-    background-image: url(../images/flamethrower-go-away.gif);
-    background-size: cover;
-    background-position: center;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.win {
+  background-image: url(../images/flamethrower-go-away.gif);
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.win h1{
-    margin-top: auto;
-    color: black;
-    font-size: 100px;
-    animation: fadeIn 2s;
-} 
-
-#win-container{
-    height: 100%;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
+.win h1 {
+  margin-top: auto;
+  color: black;
+  font-size: 100px;
+  animation: fadeIn 2s;
 }
 
-#win-container button{
-    background-color: rgba(14, 12, 12, 0.144);
-    font-family: Zombie;
-    border: none;
-    padding: 30px 50px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 30px;
-    margin: 4px 4px;
-    cursor: pointer;
-    border-radius: 8px;
-    transition: all .5s ease-in-out;
+#win-container {
+  height: 100%;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
 }
 
-#win-container button:hover{
-    padding: 40px 60px;
-    box-shadow: 19px 9px 27px 17px #A85828;
+#win-container button {
+  background-color: rgba(14, 12, 12, 0.144);
+  font-family: Zombie;
+  border: none;
+  padding: 30px 50px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 30px;
+  margin: 4px 4px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.5s ease-in-out;
 }
 
-.play-again{
-    margin-top: auto;
-    margin-bottom: 20px;
-    padding: 20px;
+#win-container button:hover {
+  padding: 40px 60px;
+  box-shadow: 19px 9px 27px 17px #a85828;
+}
+
+.play-again {
+  margin-top: auto;
+  margin-bottom: 20px;
+  padding: 20px;
 }
 
 /* Animation parameters */
+
 @keyframes fadeIn {
     0% {opacity:0;}
     100% {opacity:1;}
